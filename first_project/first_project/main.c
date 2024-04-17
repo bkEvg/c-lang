@@ -19,10 +19,10 @@ void swap(int* number_x, int* number_y){
 int main(void){
     int number_x = 7;
     int number_y = 6;
-    int* ptr_x = &number_x;
-    int* ptr_y = &number_y;
-    swap(ptr_x, ptr_y);
-    printf("%d prtx", *ptr_x);
-    printf("%d prty", *ptr_y);
+    swap(&number_x, &number_y);
+    
+    printf("%d ptr_x", number_x);
+    
+    printf("%d ptr_y", number_y);
     return 0;
 }
