@@ -9,30 +9,20 @@
 #include <stdlib.h>
 #include <string.h>
 
-void strip_string(char* str, int size){
-    int i;
-    for (i = 0; i<=size; ++i) {
-        if (str[i] == '\n') {
-            str[i] = '\0';
-        }
-    }
+void swap(int* number_x, int* number_y){
+    int buffer = 0;
+    buffer = *number_x;
+    *number_x = *number_y;
+    *number_y = buffer;
 }
 
 int main(void){
-    char first_name[50];
-    char last_name[50];
-    char full_name[100];
-    
-    printf("Программа включена\nВведите свое имя: ");
-    fgets(first_name, 50, stdin);
-    strip_string(first_name, 50);
-    printf("Введите свою фамилию: ");
-    fgets(last_name, 50, stdin);
-    strip_string(last_name, 50);
-    full_name[0] = '\0';
-    strncat(full_name, first_name, 100);
-    strncat(full_name, " ", 100);
-    strncat(full_name, last_name, 100);
-    printf("%s", full_name);
+    int number_x = 7;
+    int number_y = 6;
+    int* ptr_x = &number_x;
+    int* ptr_y = &number_y;
+    swap(ptr_x, ptr_y);
+    printf("%d prtx", *ptr_x);
+    printf("%d prty", *ptr_y);
     return 0;
 }
