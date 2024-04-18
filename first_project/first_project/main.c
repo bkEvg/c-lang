@@ -10,23 +10,9 @@
 #include <string.h>
 
 
-int myStrLen(char *string){
-    int i = 0;
-    while (1) {
-        char *addres = string + i;
-        if (*addres != '\0'){
-            i++;
-        } else {
-            break;
-        }
-    }
-    return i;
-}
-
-
 int main(void){
-    char string[10] = "";
-    printf("%d", myStrLen(string));
+    const char *strConst = "Hell boy";
+    printf("%s", strConst);
     return 0;
     
 }
