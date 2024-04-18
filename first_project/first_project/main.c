@@ -9,20 +9,26 @@
 #include <stdlib.h>
 #include <string.h>
 
-void swap(int* number_x, int* number_y){
-    int buffer = 0;
-    buffer = *number_x;
-    *number_x = *number_y;
-    *number_y = buffer;
+
+void reverse(int*numbers, int size){
+    int *left = numbers;
+    int *right = numbers + size - 1;
+    while (left < right) {
+        int tmp = *left;
+        *left = *right;
+        *right = tmp;
+        left++;
+        right--;
+    }
 }
 
+
 int main(void){
-    int number_x = 7;
-    int number_y = 6;
-    swap(&number_x, &number_y);
+    int numbers[5] = {5,6,4,3,4};
+    reverse(numbers, 5);
+    int size = sizeof(numbers) / sizeof(numbers[0]);
+    for (int i = 0; i < size; i++) {
+        printf("%d ", numbers[i]);
+    }
     
-    printf("%d ptr_x", number_x);
-    
-    printf("%d ptr_y", number_y);
-    return 0;
 }
