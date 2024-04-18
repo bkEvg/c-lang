@@ -10,25 +10,23 @@
 #include <string.h>
 
 
-void reverse(int*numbers, int size){
-    int *left = numbers;
-    int *right = numbers + size - 1;
-    while (left < right) {
-        int tmp = *left;
-        *left = *right;
-        *right = tmp;
-        left++;
-        right--;
+int myStrLen(char *string){
+    int i = 0;
+    while (1) {
+        char *addres = string + i;
+        if (*addres != '\0'){
+            i++;
+        } else {
+            break;
+        }
     }
+    return i;
 }
 
 
 int main(void){
-    int numbers[5] = {5,6,4,3,4};
-    reverse(numbers, 5);
-    int size = sizeof(numbers) / sizeof(numbers[0]);
-    for (int i = 0; i < size; i++) {
-        printf("%d ", numbers[i]);
-    }
+    char string[10] = "";
+    printf("%d", myStrLen(string));
+    return 0;
     
 }
